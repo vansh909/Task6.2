@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                echo 'This stage installs all the required dependencies for the React project using m.'
+                echo 'This stage installs all the required dependencies for the React project using npm.'
             }
         }
 
