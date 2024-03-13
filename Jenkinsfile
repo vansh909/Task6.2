@@ -12,6 +12,24 @@ pipeline {
             steps {
                 echo 'This stage runs unit tests for the React application using Jest to ensure the individual components function as expected.'
             }
+            post {
+                success {
+                    emailext(
+                        subject: "Unit Tests Successful",
+                        body: "Unit tests passed successfully.",
+                        to: "vansh4857.be22@chitkara.edu.in",
+                        attachLog: true
+                    )
+                }
+                failure {
+                    emailext(
+                        subject: "Unit Tests Failed",
+                        body: "Unit tests failed. Please check the logs for more details.",
+                        to: "vansh4857.be22@chitkara.edu.in",
+                        attachLog: true
+                    )
+                }
+            }
         }
 
         stage('Code Analysis') {
@@ -23,6 +41,24 @@ pipeline {
         stage('Security Scan') {
             steps {
                 echo 'This stage performs a security scan on the React application using OWASP ZAP to identify potential vulnerabilities and security risks.'
+            }
+            post {
+                success {
+                    emailext(
+                        subject: "Security Scan Successful",
+                        body: "Security scan passed successfully.",
+                        to: "vansh4857.be22@chitkara.edu.in",
+                        attachLog: true
+                    )
+                }
+                failure {
+                    emailext(
+                        subject: "Security Scan Failed",
+                        body: "Security scan failed. Please check the logs for more details.",
+                        to: "vansh4857.be22@chitkara.edu.in",
+                        attachLog: true
+                    )
+                }
             }
         }
 
