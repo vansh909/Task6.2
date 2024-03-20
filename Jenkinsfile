@@ -17,7 +17,7 @@ pipeline {
                     emailext(
                         subject: "Unit Tests Successful",
                         body: "Unit tests have been successfully passed.",
-                        to: "vansh4857.be22@chitkara.edu.in",
+                        to: "vansh4857.be22@chitkara.edu.in, shravan4841.be22@chitkara.edu.in", // Corrected syntax
                         attachLog: true
                     )
                 }
@@ -25,7 +25,7 @@ pipeline {
                     emailext(
                         subject: "Unit Tests Failed",
                         body: "Unit tests have failed. Please examine the logs for further information.",
-                        to: "vansh4857.be22@chitkara.edu.in",
+                        to: "vansh4857.be22@chitkara.edu.in, shravan4841.be22@chitkara.edu.in", // Corrected syntax
                         attachLog: true
                     )
                 }
@@ -47,7 +47,7 @@ pipeline {
                     emailext(
                         subject: "Security Scan Successful",
                         body: "The security scan has been successfully completed.",
-                        to: "vansh4857.be22@chitkara.edu.in",
+                        to: "vansh4857.be22@chitkara.edu.in, shravan4841.be22@chitkara.edu.in", // Corrected syntax
                         attachLog: true
                     )
                 }
@@ -55,7 +55,7 @@ pipeline {
                     emailext(
                         subject: "Security Scan Failed",
                         body: "The security scan has failed. Please check the logs for more details.",
-                        to: "vansh4857.be22@chitkara.edu.in",
+                        to: "vansh4857.be22@chitkara.edu.in, shravan4841.be22@chitkara.edu.in", // Corrected syntax
                         attachLog: true
                     )
                 }
